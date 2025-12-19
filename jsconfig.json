@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "target": "esnext"
+  },
+  "include": ["*.js", "**/*.js", "./types/p5types/global.d.ts"]
+}
