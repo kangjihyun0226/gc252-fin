@@ -20,29 +20,32 @@ let walls;
 let engine;
 let world;
 let secondBalls = [];
-let secondR = 8;
+let secondR = 10;
 let minuteBalls = [];
-let minuteR = 18;
+let minuteR = 35;
 let hourBalls = [];
-let hourR = 38;
+let hourR = 80;
 
 function setup() {
   const { width: containerWidth, height: containerHeight } =
     canvasContainer.getBoundingClientRect();
 
-  const renderer = createCanvas(containerWidth - 500, containerHeight);
+  const renderer = createCanvas(containerWidth, containerHeight);
   renderer.parent(canvasContainer);
+  // renderer.elt.style.aspectRatio = '${width}';
+  // renderer.elt.style.width = `${containerWidth}px`;
+  // renderer.elt.style.height = `${containerWidth / INITIAL_RATIO}px`;
 
   engine = Engine.create();
   world = engine.world;
 
   walls = [
     // 밑 벽
-    Bodies.rectangle(0.5 * width, height, width, 50, { isStatic: true }),
+    Bodies.rectangle(0.5 * width, height, width, 100, { isStatic: true }),
     // 왼 벽
-    Bodies.rectangle(0, 0.5 * height, 50, height, { isStatic: true }),
+    Bodies.rectangle(0, 0.5 * height, 100, height, { isStatic: true }),
     // 오른 벽
-    Bodies.rectangle(width, 0.5 * height, 50, height, { isStatic: true }),
+    Bodies.rectangle(width, 0.5 * height, 100, height, { isStatic: true }),
   ];
 
   // 생성된 벽들 추가
